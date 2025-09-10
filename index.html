@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Uday Gaikwad - Embedded System Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --accent-color: #10b981;
+            --max-width: 1200px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #fff;
+            color: #334155;
+            background-color: var(--light-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            width: 100%;
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-top: 3rem;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 0.5rem auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header */
+        #header {
+            background: var(--dark-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        #header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--light-color);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+            color: #fff;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,224L48,213.3C96,203,192,181,288,160C384,139,480,117,576,122.7C672,128,768,160,864,170.7C960,181,1056,171,1152,165.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            background: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--primary-color);
+            border: 5px solid var(--accent-color);
+            overflow: hidden;
+        }
+        
+        .hero-image i {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* About Section */
+        #about {
+            padding: 4rem 0;
+            background: #fff;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .skills {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+        }
+        
+        .skill-bar {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-progress {
+            height: 10px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .skill-progress div {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 10px;
+            position: relative;
+            transition: width 1s ease-in-out;
+        }
+        
+        .skill-progress div::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg, 
+                rgba(255, 255, 255, 0.2) 25%, 
+                transparent 25%, 
+                transparent 50%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                rgba(255, 255, 255, 0.2) 75%, 
+                transparent 75%, 
+                transparent
+            );
+            background-size: 50px 50px;
+            animation: move 2s linear infinite;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+        
+        /* Projects Section */
+        #projects {
+            padding: 4rem 0;
+            background: var(--light-color);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .project-info p {
+            margin-bottom: 1rem;
+            color: #64748b;
+        }
+        
+        /* Contact Section */
+        #contact {
+            padding: 4rem 0;
+            background: #fff;
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            width: 20px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        #footer {
+            background: var(--dark-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+        }
+        
+        /* Animation for skill bars */
+        @keyframes animateSkill {
+            from { width: 0; }
+        }
+        
+        .animate-skill {
+            animation: animateSkill 1.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">Aditya<span>Gaikwad</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-image">
+                <i class="fas fa-microchip"></i>
+            </div>
+            <div class="hero-content">
+                <h1>Aditya Uday Gaikwad</h1>
+                <p>Embedded System Engineer</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>Creating Intelligent Embedded Solutions</h2>
+                <p>I am an Embedded System Engineer with strong expertise in system design, firmware development, and hardware-software integration. My professional experience includes working on advanced robotics, autonomous navigation, and electric vehicle systems.</p>
+                <p>I am passionate about building intelligent embedded solutions that combine real-time control with modern communication protocols to solve real-world challenges. I have hands-on experience in developing and optimizing embedded applications using C, C++, and RTOS, as well as working with microcontrollers, sensors, and actuators.</p>
+                <p>My work spans across domains such as IoT, AI-driven embedded vision, and automotive systems. I aim to push the boundaries of embedded technology to create reliable, efficient, and scalable products.</p>
+            </div>
+            <div class="skills">
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Embedded C / C++</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div style="width: 90%;" class="animate-skill"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>RTOS (FreeRTOS, Zephyr)</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div style="width: 80%;" class="animate-skill"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Communication Protocols</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div style="width: 90%;" class="animate-skill"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Embedded Linux</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div style="width: 75%;" class="animate-skill"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Hardware Debugging & Tools</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div style="width: 80%;" class="animate-skill"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>PCB Design (KiCad)</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div style="width: 70%;" class="animate-skill"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span>Machine Learning & Embedded Vision</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div style="width: 70%;" class="animate-skill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="container">
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Self-Driving Robot using LiDAR</h3>
+                        <p>Designed and implemented an autonomous robot capable of navigation and obstacle avoidance using LiDAR-based SLAM. Integrated real-time decision-making with sensor fusion for reliable performance.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #059669 0%, #0da5e9 100%);">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>EV All-Wheel Drive System</h3>
+                        <p>Developed a control system for electric vehicles with dual battery packs using CAN logic to optimize charging/discharging, reduce downtime, and extend range.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #db2777 0%, #7c3aed 100%);">
+                        <i class="fas fa-bluetooth"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Data Logging System via BLE</h3>
+                        <p>Designed a BLE-based data logger for electric vehicles to collect BMS and subsystem data wirelessly, enabling efficient diagnostics and analytics.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #ea580c 0%, #ca8a04 100%);">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Automated Defective Product Rejection System</h3>
+                        <p>Built during my internship at Bosch Syntegon, where I developed an embedded system that automatically identified and rejected defective products on a production line.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="container contact-content">
+            <div class="contact-info">
+                <h3>Let's talk about your project</h3>
+                <p><i class="fas fa-envelope"></i> adityagaikwad26@icloud.com</p>
+                <p><i class="fas fa-phone"></i> +91 7972163460</p>
+                <p><i class="fas fa-map-marker-alt"></i> Goa, India</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2023 Aditya Uday Gaikwad. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thanks for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animate skill bars when they come into view
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress div');
+                    skillBars.forEach(bar => {
+                        bar.classList.add('animate-skill');
+                    });
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(document.querySelector('.skills'));
+    </script>
+</body>
+</html>
